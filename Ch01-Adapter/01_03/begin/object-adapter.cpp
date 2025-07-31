@@ -1,4 +1,5 @@
 #include <iostream>
+#include <memory>
 
 using namespace std;
 
@@ -37,7 +38,7 @@ public:
     }    
 };
 
-class LegacyClassAdapter: public Component, private LegacyComponent
+class LegacyAdapter: public Component, private LegacyComponent
 {
 public:
     LegacyAdapter() : m_adaptee(make_unique<LegacyComponent>()) {}
